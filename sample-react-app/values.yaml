@@ -6,7 +6,7 @@ replicaCount: 1
 logLevel: "debug"
 image:
   repository: image-registry.openshift-image-registry.svc:5000/sample-qa/sample-react-app
-  tag: 0.0.3
+  tag: 0.0.2
   pullPolicy: IfNotPresent
   port: 3000
 nameOverride: sample-react-app
