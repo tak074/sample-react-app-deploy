@@ -1,0 +1,35 @@
+# Default values for template-node-typescript.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+global: {}
+replicaCount: 1
+logLevel: "debug"
+image:
+  repository: image-registry.openshift-image-registry.svc:5000/sample-qa/sample-react-app
+  tag: 0.0.1
+  pullPolicy: IfNotPresent
+  port: 3000
+nameOverride: sample-react-app
+fullnameOverride: sample-react-app
+service:
+  type: ClusterIP
+  port: 80
+route:
+  enabled: true
+ingress:
+  enabled: false
+  appid:
+    enabled: false
+    # web or app - https://cloud.ibm.com/docs/services/appid?topic=appid-kube-auth
+    requestType: web
+    #  host: hello
+  namespaceInHost: true
+  subdomain: containers.appdomain.cloud
+  path: "/"
+#  tlsSecretName: ""
+vcsInfo:
+  repoUrl: https://github.com/tak074/sample-react-app.git
+  branch: 931a15b700b40cd283a7e978538900d5833593e0
+partOf: ""
+connectsTo: ""
+runtime: js
